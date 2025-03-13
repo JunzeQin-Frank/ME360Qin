@@ -1,0 +1,499 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Junze Qin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Junze Qin's ME360 Portfolio</h1>
+								<p>Awarded Researcher and Junior Mechanical Engineering Undergraduate in Boston University</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#Four">Four Bar</a></li>
+								<li><a href="#Trash">Trash Can</a></li>
+								<li><a href="#Motor">Motor</a></li>
+								<li><a href="#contact">Contact</a></li>
+								
+			
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->	
+<!-- four bar mechancisms -->
+<article id="Four">
+    <h2 class="major">Four Bar Mechanisms</h2>
+	<p style="font-size: 30px;">
+		Part I: CAD Demonstration	 </p>
+    <div class="image-container">
+        <img src="images/fourbar/initial CAD.png"/>
+    </div>
+
+    <p>The main goal of this project is to comprehend four bar mechanisms and proceeding simulation using Solidworks. According to the image, the model is consisted of 2 bearings, 1 crank, 1 extension, and 1 rocker.
+		  <p>
+	</p> Initially, only simple hinge and coincident mates were used, resulting in more degrees of freedom (DOFs) than expected and potentially causing future simulation failures because the model was not fully defined. 
+		To address this, additional mates—such as concentric and point-to-point mates—were introduced, reducing the DOF to just one: rotation about the crank’s z-axis. </p>
+	<span class="image main"><img src="images/fourbar/update degree of freedom.png" alt=""/></span>
+	<p> To simulate the process, a rotary motor is acutated on the crank around the z-aixs. The motor is set to 20 rpm with constant angular velocity. Below is the video of the simulation. </p>
+	<video controls width="560">
+			<source src="images/fourbartu.mp4" type="video/mp4">
+			
+		  </video>
+	<p style="font-size: 30px;">
+			Part II: Result	 </p>
+	<p> To acquire precise data from the motion analysis, Result function in Solidworks is utilized. With the effect of  gravity, the Torque vs. Time looks like the following image.
+		The maximum value of the torque acting on the plain carbon steel crank equals 591.2035 N*mm, which is found using the exported CSV file.
+	</p>
+	<span class="image main"><img src="images/fourbar/motor torque.png" alt=""/></span>
+	<p> Similarly, to find the angle of the crank for which the motor torque is maximum in each cycle, simply change the x-axis of the Result
+		plot to angular displacement. The maximum torque happens at 233.313 degree for each revolution if the crank is initally parallel and pointed to positive x-axis. </p>
+	<span class="image main"><img src="images/fourbar/torque vs. Degree.png" alt=""/></span>
+	<p> The velocities in the X and Y directions for the midpoint of the extension are shown in the pictures below using the velocity tracing function in Result.</p>
+	<span class="image main"><img src="images/fourbar/xvelo.png" alt=""/></span>
+	<span class="image main"><img src="images/fourbar/yvelo.png" alt=""/></span>
+	<p>The maximum vertical force applied on the bearing is 12.168 N and is 10.672 on the new bearing. The plots are shown as: </p>
+	<span class="image main"><img src="images/fourbar/vertical force.png" alt=""/></span>
+	<span class="image main"><img src="images/fourbar/Screenshot 2025-03-11 231831.png" alt=""/></span>
+	<p>Last but to the least, to find the accurate amount of the minimum motor power to move the crank with constant 600 rpm, category Power Consumption is selected while the original motor is modified to 600 rpm.
+		As the result, the minimum required motor power is 1034.591. </p>
+	<span class="image main"><img src="images/fourbar/power.png" alt=""/></span>
+	<p>On the Excel sheet of the motor torque plot, negative torque values appear due to the crank’s angular acceleration under gravity. Initially, a positive torque is applied in the +z direction to accelerate the crank counterclockwise. However, according to the kinematic relationship 
+		Vf^2 = Vi^2 + 2ad, the crank’s angular velocity exceeds 10 RPM once it swings below the +y axis. Consequently, to maintain a constant angular speed, the motor must apply a torque in the -z direction to decelerate the crank, which is reflected as negative values on the plot.</p>
+</article>
+
+<style>
+    /* Style for centering the image */
+    .image-container {
+        text-align: center;    /* Centers the image horizontally */
+        margin-bottom: 20px;  /* Adds space below the image */
+    }
+
+    .image-container img {
+        width: 80%;    /* Increase width to make the image bigger */
+        max-width: 800px; /* Optional max width in pixels */
+        height: auto;  /* Maintains aspect ratio */
+    }
+
+    /* Additional styles for the text and layout */
+    #intro {
+        text-align: center; 
+        padding: 20px;      
+    }
+
+    .major {
+        font-size: 2em; 
+        margin-bottom: 10px;
+    }
+</style>
+
+
+						<!-- Work -->
+							<article id="Trash">
+								<h2 class="major">Automatic Trash Can</h2>
+							
+									The goal of this trash can is to automatically dump the trash that been placed on the top of the plate. After the user press the red bottom, the arms will follow a pre-determined trace to dump the trash into the container with out leaking. 
+									The trace is simulated using MID to refine the dimensions of the arms and their locations. 
+								</p>
+								<p> Project Demo: https://youtu.be/cgQJwZaTlY4</p>
+								<span class="image main"><img src="images/project101.png" alt=""/></span>
+								  
+
+							</article>
+						<!-- About -->
+							<article id="Motor">
+								<h2 class="major">Motor Control </h2>
+								<p> The main goal of this project is to apply motor speed control concepts to a transporter. 
+									In the first phase, I use SolidWorks to simulate the entire process and gather key performance data.
+									In the second phase, we compare the simulation result and build a car equipped with a stepper motor and control system to carry an aluminum bar for a specific distance without toppling in the shortest time possible.  </p> 
+								<p style="font-size: 40px;">
+											Part I: Simulation </p>
+								<p>To prevent the 1-foot-long aluminum bar from toppling, we first need to determine the maximum acceleration it can safely withstand. As an initial step, kinematic equations can be used to estimate a theoretical acceleration. 
+									According to the attached image, this theoretical acceleration is closely related to the bar’s dimensional ratio. </p>
+								<span class="image main"><img src="images/motor/FBD.jpg" alt=""/></span>
+
+								<p>Using the theoretical acceleration as a starting point, the next step is to demonstrate the transporting process in a SolidWorks Motion study. 
+									First, we need to verify that the theoretical acceleration is valid. To do this, we set up a simple demonstration with the bar and a plate, then apply a linearly increasing acceleration motor to the plate.
+									Finally, we use SolidWorks’ Results function and exported excel sheet to confirm that the simulation aligns with the theoretical prediction. </p>
+								<video controls width="560">
+									<source src="images/video/simulation 101.mp4" type="video/mp4">
+									
+								  </video>
+								<span class="image main"><img src="images/picture/Screenshot 2025-03-12 193845.png" alt=""/></span>
+								<p>While the theoretical acceleration is confirmed, more detailed simulation need to illustrated to find the shortest time interval.
+									Below is the CAD for the transporting car that will be used in the simulation. 
+								</p>
+								<span class="image main"><img src="images/picture/carmodel.png" alt=""/></span>
+								<p>Compared to the theoretical value, the updated CAD simulation yields an actual acceleration of 0.809 m/s². Next, we use kinematic equations to determine the minimum travel time without toppling. The calculation process shown below assumes the distance was 10 foot and incorporates a buffer time, accounting for the reaction force concentrated on one side of the bar, to ensure stability. </p>
+								
+								
+								<span class="image main"><img src="images/motor/time.jpg" alt=""/></span>
+								<P>Based on the simulation and calculation, the shortest total time invertal to complete a 10 foot trip mission (back and forth). 
+									Meanwhile, with the measurement from our step motor, the actual maximum revolution speed it can attain is 291 rpm. From there, as it also shown in the calculation,
+									the minimum wheel radius has to be greater than 2.029 inch to ensure the maximum linear velocity is achievable.</P>
+								
+								<p> Eventually, I applied the acceleration function to the linear motor in the simulation. The demonstration will look like the video below </p>
+								<video controls width="560">
+									<source src="images/video/simulation 102.mp4" type="video/mp4">
+									
+								  </video>
+								<span class="image main"><img src="images/picture/acceleration plot total.png" alt=""/></span>
+								
+								<p style="font-size: 40px;">
+									Part II: Physical Model and Control
+
+								</p>
+								
+								<p>When comes to model construction, a lot of consideration should be taken to eliminate any deficiencies and uncertainties. For instance, it is necessary to remove the material from the center of the wheel as much as 
+								possible while maintaining its stable structure. Such design could reduce friction between the wheel and the ground therefore slipping won't occur. Below are the wheel and wheel axle support design. </p>
+								<span class="image main"><img src="images/picture/644d231a1577313a4af21ca753834d4.jpg" alt=""/></span>
+								<span class="image main"><img src="images/picture/69bea4b07c0460eb7f9537746dff172.jpg" alt=""/></span>
+								<p>To support the motor and ensure its interchangeability, I also designed an open-lid motor support with 3-D printing. In addition, considering the excessive weight the screws, nuts and spacer would brought, we carefully used glue gun to
+									stablize the arduino board and motor control board on the backside of the car thus the bar won't be affected by the wires and collisions. 
+								  </p>
+								<span class="image main"><img src="images/picture/motor support.png" alt=""/></span>
+								<p>	After the assembly, our final product, "Brian Griffin" looks like this:
+								<span class="image main"><img src="images/picture/cartop.jpg" alt=""/></span>
+								<span class="image main"><img src="images/picture/carbot.jpg" alt=""/></span>
+								</p>
+
+								<p>To tackle the coding part and optimize the angular acceleration, my teammate used the code that was introduced in the class to control the inaccuracy of the linear velocity.
+									Through applying for loops in the code, the arduino will control the motor's angular velocity in high resoultion. 
+								<p> At the same time, we intentionally decreased the angular acceleration in the code 
+									to leave sufficient testing ranges in actual simulation. Below are the partial of our code, the full edition can be found using this link: https://docs.google.com/document/d/1J2crp3Ax3Cgl7qDqNk_7YF24i52y4C7tSJKfcRdPYiM/edit?usp=sharing </p>
+
+
+								
+								</p>
+								<span class="image main"><img src="images/picture/code.png" alt=""/></span>
+
+								<p>In the final presentation, although one of our product's wheel got partially deformed, it still completes the designated trip accruately. Mainly due to the deformed wheel, The whole trip took approximately 8 second for 5 feet distance
+									which is 1.5 second longer than the theorectial time. In the future projects,
+									we should further improve our product's quailty and examine carefully before the final testing phase. 
+								</p>
+								<video controls width="560">
+									<source src="images/video/IMG_2243 (1).mp4" type="video/mp4">
+
+									
+								  </video>
+								<p> In general, thanks to my teammates' hard working and fairly distributed work, we accomplished the goals of this project and gained both skills in physical prototyping and advanced computational tools in the design process to validate ideas and 
+									design concepts.   </p>
+								
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/junze-qin-797231277" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+									
+								</ul>
+							</article>
+
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
